@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>view-qrcode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+
+  <qrcode  (qrCodeURL)="onChangeURL($event)"  [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+<ion-card-content>
+    <h2>Result</h2>
+
+    <p>{{ qrCodeData }}</p>
+    
+</ion-card-content>
+</ion-card>
+<ion-button expand="full" (click)="scanAgain()">Scan Again</ion-button>
+<ion-button expand="full" (click)="socialShare()">Share</ion-button>
+
+
+
+</ion-content>
